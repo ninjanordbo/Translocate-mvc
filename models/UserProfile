@@ -1,0 +1,27 @@
+const mongoose = require("mongoose");
+
+  const UserProfileSchema = new mongoose.Schema({
+    userName: { 
+      type: String, 
+      unique: true 
+    },
+    bio: {
+        type: String,
+        required: false,
+      },
+    image: {
+        type: String,
+        require: true,
+      },
+      cloudinaryId: {
+        type: String,
+        require: true,
+      },
+      createdById:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+      },
+  
+  });
+
+  module.exports = mongoose.model("UserProfile", UserProfileSchema);

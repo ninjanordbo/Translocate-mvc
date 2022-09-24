@@ -1,15 +1,21 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-    </div>
-  </div>  
+
+
+<section id="one" class="wrapper style1 special">
+  <div class="inner">
+    <header class="major">
+      <h2>Post turen din!</h2>
+    </header>
+    <ul class="features">
+      <% for(var i=0; i<posts.length; i++) {%>
+      <li class="icon solid fa-car">
+        <a href="/post/<%= posts[i]._id%>">
+          <img class="img-fluid" src="<%= posts[i].image%>">
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</section>
+
+
 <%- include('partials/footer') -%>
