@@ -1,29 +1,37 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
-  title: {
+  departureLocation:{
     type: String,
     required: true,
   },
-  image: {
+  arrivalLocation:{
     type: String,
-    require: true,
-  },
-  cloudinaryId: {
-    type: String,
-    require: true,
+    required: true,
   },
   caption: {
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
+  departureDate:{
+    type: Date,
     required: true,
+  },
+  departureTime:{
+    type: Number,
+    required: false,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  createdBy:{
+    type: String,
+    ref:"User"
+  },
+  createdById:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"User"
   },
   createdAt: {
     type: Date,
