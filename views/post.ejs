@@ -41,19 +41,19 @@
         <section id="banner">
           <div class="inner">
               <h2></h2>
-              <p><br />
+              <p>Finn en å dele turen med<br />
               </p>
        
           </div>
-          <a href="#one" class="more scrolly">Registrer turen!</a>
+          <a href="#one" class="more scrolly"></a>
         </section>
 		
             <section id="one" class="wrapper style1 special">
               <div class="inner">
                 <div class="flex-direction-column mt-5">
                   <div class="col-6">
-                    <h2><%= post.title %></h2>
-                    <img class="img-fluid" src="<%= post.image%>" />
+                    <h2><%= post.fromWhere %></h2>
+					<h2><%= post.toWhere %></h2>
                     <div class="row justify-content-between">
                       <form
                         class="col-1"
@@ -65,7 +65,8 @@
                       <form
                         action="/post/deletePost/<%= post.id %>?_method=DELETE"
                         method="POST"
-                        class="col-3">
+                        class="col-3"
+                      >
                         <button class="btn btn-primary fa fa-trash" type="submit"></button>
                       </form>
                       <%}%>
@@ -86,8 +87,8 @@
                   </div>
             
                   <div class="col-6 mt-5">
-                    <a class="button" href="/profile">Return to Profile</a>
-                    <a class="button" href="/feed">Return to Feed</a>
+                    <a class="button" href="/profile">Registrere tur</a>
+                    <a class="button" href="/feed">Tilbake til turtalva</a>
                   </div>
                 </div>
               </div>
@@ -104,7 +105,7 @@
 							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							
 						</ul>
 					</footer>
 
