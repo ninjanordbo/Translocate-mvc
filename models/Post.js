@@ -14,7 +14,7 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   departureTime:{
-    type: Number,
+    type: String,
     required: false,
   },
   caption: {

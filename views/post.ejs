@@ -52,8 +52,7 @@
               <div class="inner">
                 <div class="flex-direction-column mt-5">
                   <div class="col-6">
-                    <h2><%= post.fromWhere %></h2>
-					<h2><%= post.toWhere %></h2>
+					<p><%= post.caption %></p>
                     <div class="row justify-content-between">
                       <form
                         class="col-1"
@@ -65,8 +64,7 @@
                       <form
                         action="/post/deletePost/<%= post.id %>?_method=DELETE"
                         method="POST"
-                        class="col-3"
-                      >
+                        class="col-3">
                         <button class="btn btn-primary fa fa-trash" type="submit"></button>
                       </form>
                       <%}%>
