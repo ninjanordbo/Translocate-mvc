@@ -50,7 +50,7 @@
                         <div class="inner">
                             <div class="flex-direction-column mt-5">
                               	<div class="col-4">
-								<h2>Lag konto</h2>
+								<h2>Logg inn</h2>
                                 <section class="col-6 mt-5">
                                     <% if (locals.messages.errors) { %>
                                         <% messages.errors.forEach( el => { %>
@@ -64,27 +64,27 @@
                                     <% } %>
                                     <form action="/signup" method="POST">
                                         <div class="mb-3">
-                                            <label for="userName" class="form-label">Brukernavn</label>
+                                            <label for="userName" class="form-label">User Name</label>
                                             <input type="text" class="form-control" id="userName" name="userName">
                                           </div>
                                         <div class="mb-3">
-                                          <label for="exampleInputEmail1" class="form-label">Email</label>
+                                          <label for="exampleInputEmail1" class="form-label">Email address</label>
                                           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                                          <div id="emailHelp" class="form-text">Vi deler aldri dine personlige opplysninger med andre.</div>
+                                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                                         </div>
                                         <div class="mb-3">
-                                          <label for="password" class="form-label">Passord</label>
+                                          <label for="password" class="form-label">Password</label>
                                           <input type="password" class="form-control" id="password" name="password">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="confirmPassword" class="form-label">Gjenta passord</label>
+                                            <label for="confirmPassword" class="form-label">Confirm Password</label>
                                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                                           </div>
-                                        <button type="submit" class="btn btn-primary">Enter</button>
+                                        <button type="submit" class="button primary">Submit</button>
                                       </form>
-                                      <div>								
-                                        <a class="button" href="/login">Logg inn</a>     
-                                    </div>
+                                        <div>								
+                                            <a class="button" href="/login">Lag konto</a>     
+                                        </div>
                               	</div>
 								
                       </section>
