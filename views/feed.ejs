@@ -20,6 +20,7 @@
 	<body class="is-preload">
 
 		<!-- Page Wrapper -->
+
 			<div id="page-wrapper">
 
 				<!-- Header -->
@@ -62,9 +63,12 @@
 								<ul class="features">
 									<% for(var i=0; i<posts.length; i++) {%>
 									<li class="icon solid fa-car">
-										<a href="/post/<%= posts[i]._id%>"></a>
-										<h2><%= posts[i].fromWhere %></h2><h2><%= posts[i].toWhere %></h2>
+										<h2><%= posts[i].fromWhere  %></h2><h2><%= posts[i].toWhere %></h2>
+										<p><%= posts[i].departureDate %></p><h5><%= posts[i].departureTime %></h5>
 										<p><%= posts[i].caption %></p>
+										<a <a href="/post/<%= posts[i]._id%>">
+											<button>intressert</button>
+										  </a> 
 									</li>
 									<% } %>
 								</ul>
