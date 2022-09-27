@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: rgb(255, 255, 255);
+		color: rgb(209, 209, 209);
 		font-family: "Open Sans", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 400;
@@ -159,7 +159,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #fff;
+		color: rgb(244, 242, 242);
 		font-weight: 800;
 		letter-spacing: 0.225em;
 		line-height: 1em;
@@ -1903,7 +1903,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #fff;
+			color: rgb(15, 15, 15);
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -3627,10 +3627,12 @@ input, select, textarea {
 		#banner p {
 			letter-spacing: 0.225em;
 			text-transform: uppercase;
+			color: white;
 		}
 
 			#banner p a {
-				color: inherit;
+				color: white;
+
 			}
 
 		#banner .more {

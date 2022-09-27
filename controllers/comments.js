@@ -1,12 +1,14 @@
 const Comment = require("../models/Comment");
+const User = require("../models/User");
 
 module.exports = {
   createComment: async (req, res) => {
     try {
-        await Comment.create({
+      const commentUser = await User.findById(req.user.id)
+      await Comment.create({
         comment: req.body.comment,
         post:req.params.id,
-        createdBy: req.user.userName,
+        createdBy: commentUser.userName,
         createdById: req.user.id
       });
       console.log("Comment has been added!");

@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment")
+const User = require("../models/User");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -21,8 +22,8 @@ module.exports = {
   },
   getPost: async (req, res) => {
     try {
-      
       const post = await Post.findById(req.params.id);
+      
       const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
       res.render("post.ejs", { post: post, user: req.user, comments: comments });
       console.log (comments)
@@ -32,13 +33,14 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
+      const commentUser = await User.findById(req.user.id)
       await Post.create({
         fromWhere: req.body.fromWhere,
         toWhere:req.body.toWhere,
         departureDate:req.body.departureDate,
         departureTime:req.body.departureTime,
         caption: req.body.caption,
-        user: req.user.id,
+        createdBy: commentUser.userName,
       });
       console.log("Turen er registrert!");
       res.redirect("/feed");
