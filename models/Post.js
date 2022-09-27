@@ -11,7 +11,7 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   departureDate:{
-    type: Date,
+    type: String,
     required: true,
   },
   departureTime:{
