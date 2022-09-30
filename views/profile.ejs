@@ -1,64 +1,47 @@
 <%- include('partials/header') -%>
-<section id="one" class="wrapper style1 special">
-  <div class="inner">
-    <div class="flex-direction-column mt-5">
+<div class="container">
+  <div class="row mt-5">
       <div class="col-6">
-              <header class="major">
-                  <div>
-                    <h2>Post din tur</h2>
-                  </div>
-                  <div>
-                    <p><strong>Brukernavn</strong>: <%= user.userName %></p>
-                    <p><strong>Email</strong>: <%= user.email %></p>
-                    <a href="/logout" class="col-3 btn btn-primary">Logg ut</a>
-                  </div>             
-              </header>
-              <div class="mt-5">
-                <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-                      <div class="mb-3">
-                          <label for="fromWhere" class="form-label">Fra</label>
-                          <input type="text" class="form-control" id="fromWhere" name="fromWhere">
-                      </div>
-                      <div class="mb-3">
-                          <label for="toWhere" class="form-label">Til</label>
-                          <input type="text" class="form-control" id="toWhere" name="toWhere">
-                      </div>   
-                      <div class="mb-3">
-                        <label for="departureDate" class="form-label">Dato</label>
-                        <input type="text" class="form-control" id="departureDate" name="departureDate">
-                      </div>       
-                      <div class="mb-3">
-                        <label for="departureTime" class="form-label">Avreisetid</label>
-                        <input type="text" class="form-control" id="departureTime" name="departureTime">
-                      </div>
-                      <div class="mb-3">
-                        <label for="caption" class="form-label">Detaljer</label>
-                        <textarea class="form-control" id="caption" name="caption"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-primary" value="Upload">Send</button>
-                    
-                </form>             
-            </div>
-          <div class="col-6">
-            <ul>
-              <% for(var i=0; i<posts.length; i++) {%>
-                <li>
-                  <h2><%= posts[i].fromWhere  %></h2><h2><%= posts[i].toWhere %></h2>
-                  <p><%= posts[i].departureDate %></p><h5><%= posts[i].departureTime %></h5>
-                  <p><%= posts[i].caption %></p>
-                  <span><%= posts[i].createdBy %></span>
-                  <a href="/post/<%= posts[i]._id%>"></a>
-                </li>
-                <% } %>
-                <div class="justify-content-center">
-                  <a class="button" href="/feed">Turtavla</a>
-                </div>  
-              </ul>
-             
-          </div>  
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Add a post</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Caption</label>
+                <textarea class="form-control" id="caption" name="caption"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
       </div>
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+        <li class="col-6 justify-content-between mt-5">                       
+            <h2><%= post[i].fromWhere %></h2><h2><%= post[i].toWhere %></h2>
+            <p><%= post[i].departureDate %></p><h5><%= post[i].departureTime %></h5>						
+            <p><%= post[i].caption %></p>	
+        </li>
+        <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  
     </div>
   </div>
-</section>
+</div>
 
 <%- include('partials/footer') -%>
