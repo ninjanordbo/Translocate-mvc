@@ -15,6 +15,8 @@ canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
+	list-style-type: none;
+	text-decoration: none;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -66,6 +68,12 @@ input, select, textarea {
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+}
+/* a links */
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
 
 /* Basic */
@@ -2529,7 +2537,16 @@ input, select, textarea {
 			}
 
 		}
+/* Post comments */
+.singlePost{
+	background-color: rgba(255, 255, 255, 0.398);
+	padding: 2rem;
+}
 
+#postComments{
+	background-color: rgba(255, 255, 255, 0.106);
+	padding: 2rem;
+}
 /* Features */
 
 	.features {
@@ -2548,6 +2565,7 @@ input, select, textarea {
 		list-style: none;
 		padding: 0;
 		width: 100%;
+		text-decoration: none;
 	}
 
 		.features li {
@@ -2556,6 +2574,8 @@ input, select, textarea {
 			position: relative;
 			text-align: left;
 			width: 50%;
+			text-decoration: none;
+			list-style-type: none;
 		}
 
 			.features li:nth-child(1) {
@@ -2605,6 +2625,7 @@ input, select, textarea {
 				left: 1.75em;
 				top: 2.75em;
 				font-size: 1.5em;
+				text-decoration: none;
 			}
 
 			.features li:nth-child(1) {
@@ -3574,7 +3595,7 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		cursor: default;
-		height: 100vh;
+		height: 50vh;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;

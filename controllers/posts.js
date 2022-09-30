@@ -13,8 +13,8 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();   
+      res.render("feed.ejs", { posts: posts});
     } catch (err) {
       console.log(err);
     }
@@ -22,10 +22,8 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      
       const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
       res.render("post.ejs", { post: post, user: req.user, comments: comments });
-      console.log (comments)
     } catch (err) {
       console.log(err);
     }
@@ -40,6 +38,7 @@ module.exports = {
         departureTime:req.body.departureTime,
         caption: req.body.caption,
         createdBy: commentUser.userName,
+        user: req.user.id,
       });
       console.log("Turen er registrert!");
       res.redirect("/feed");

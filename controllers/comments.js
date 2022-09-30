@@ -7,6 +7,7 @@ module.exports = {
       const commentUser = await User.findById(req.user.id)
       await Comment.create({
         comment: req.body.comment,
+        likes: req.body.likes,
         post:req.params.id,
         createdBy: commentUser.userName,
         createdById: req.user.id

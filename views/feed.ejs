@@ -63,19 +63,24 @@
 
 								<ul class="features">
 									<% for(var i=0; i<posts.length; i++) {%>
-										<li class="icon solid fa-car">
-											<h2><%= posts[i].fromWhere  %></h2><h2><%= posts[i].toWhere %></h2>
-											<span>Dato:</span>
-											<p><%= posts[i].departureDate %></p><span>Tid:</span><p><%= posts[i].departureTime %></p>
-											<span>Kommentar:</span><p><%= posts[i].caption %></p><span>Postet av:</span>
-											<span><%= posts[i].createdBy %></span>
+
+										<a href="/post/<%= posts[i]._id%>">
+											<li class="icon solid fa-car">										
+												<h2><%= posts[i].fromWhere  %></h2><h2><%= posts[i].toWhere %></h2>
+												<span>Dato:</span>
+												<p><%= posts[i].departureDate %></p><span>Tid:</span><p><%= posts[i].departureTime %></p>
+												<span>Detaljer:</span><p><%= posts[i].caption %></p><span>Postet av:</span>
+												<span><%= posts[i].createdBy %></span>								
 											<div>
 												<a href="/post/<%= posts[i]._id%>" class="col-3 btn btn-primary">Skriv melding</a>
-											</div>	
-										</li>
-										
-									<% } %>
-								</ul>								
+											</div></a>
+							
+											<% } %>
+							
+							</ul>
+							<ul>
+						
+							  </ul>								
 							</div>
 						</section>
 					</div>
