@@ -34,13 +34,12 @@
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Start</a></li>
-											<li><a href="/brukerprofil/<%= user._id%>">Min side</a></li>
+											<li><a href="/brukerprofil">Min side</a></li>
 											<li><a href="/turtavle">Turtavla</a></li>
 											<li><a href="/postentur">Post tur</a></li>
 											<li><a href="/lagkonto">Lag konto</a></li>
 											<li><a href="/logginn">Logg inn</a></li>
 											<li><a href="/loggut">Logg ut</a></li>
-											
 										</ul>
 									</div>
 								</li>
@@ -60,40 +59,15 @@
         <section id="one" class="wrapper style1 special">
             <div class="inner">
                 <div class="flex-direction-column mt-5">
-					<div class="row justify-content-between"></div>
-						<div class="col-6 ">
-							<div class="singlePost">
-							<h2><%= post.fromWhere %></h2><h2><%= post.toWhere %></h2>
-							<p><%= post.departureDate %></p><h5><%= post.departureTime %></h5>						
-							<p><%= post.caption %></p>	
-							<span>Postet av:<%= post.createdBy %></span>
-							</div>							 
-						</div>					
-					</div>
-					<div id="postComments">	
-						<ul>
-							<h5>Kommentarer</h5>
-							<% for(var i=0; i<comments.length; i++) {%>
-							  <li class="">
-							   <p><%= comments[i].comment%></p>
-							   <p>Brukernavn: <%= comments[i].createdBy%></p>
-							  </li>
-							<% } %>
-						  </ul>
-					</div>
-					<div class="mb-3">
-						<form action="/comment/createComment/<%=post._id%>" method="POST">
-						<div class="mb-3">
-							<label for="comment" class="form-label">Legg igjen kommentar</label>
-							<input type="text" class="form-control" id="comment" name="comment">
-						</div>
-						<button type="submit" class="btn btn-primary">Send</button>
-						</form>
-						<div class="col-6 mt-5">
-							<a class="button" href="/profile">Post tur</a>
-							<a class="button" href="/feed">Tilbake</a>
-						</div>
-					</div>	 			
+                    <div>
+                        <p><strong>Brukernavn</strong>: <%= user.userName %></p>
+                        <p><strong>Email</strong>: <%= user.email %></p>
+                       
+                        <a href="/loggut" class="col-3 btn btn-primary">Logg ut</a>
+                    </div>
+                    <div>
+                      
+                    </div>
 				</div>
             </div>	            		
         </section>

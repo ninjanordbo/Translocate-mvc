@@ -14,6 +14,14 @@
 		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
 		crossorigin="anonymous"
 	  />
+	  		<!-- Scripts -->
+			  <script defer src="/assets/js/jquery.min.js"></script>
+			  <script defer src="/assets/js/jquery.scrollex.min.js"></script>
+			  <script defer src="/assets/js/jquery.scrolly.min.js"></script>
+			  <script defer src="/assets/js/browser.min.js"></script>
+			  <script defer src="/assets/js/breakpoints.min.js"></script>
+			  <script defer src="/assets/js/util.js"></script>
+			  <script defer src="/assets/js/main.js"></script>
 	</head>
 
 
@@ -33,11 +41,12 @@
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Start</a></li>
-											<li><a href="/feed">Turtavla</a></li>
-											<li><a href="/profile">Post tur</a></li>
-											<li><a href="/signup">Lag konto</a></li>
-											<li><a href="/login">Logg inn</a></li>
-											<li><a href="/logout">Logg ut</a></li>
+											<li><a href="/brukerprofil">Min side</a></li>
+											<li><a href="/turtavle">Turtavla</a></li>
+											<li><a href="/postentur">Post tur</a></li>
+											<li><a href="/lagkonto">Lag konto</a></li>
+											<li><a href="/logginn">Logg inn</a></li>
+											<li><a href="/loggut">Logg ut</a></li>
 										</ul>
 									</div>
 								</li>
@@ -51,6 +60,7 @@
                             <div class="flex-direction-column mt-5">
                               	<div class="col-4">
 								<h2>Lag konto</h2>
+								<h5>Vi deler aldri dine personlige opplysninger med andre.</h5>
                                 <section class="col-6 mt-5">
                                     <% if (locals.messages.errors) { %>
                                         <% messages.errors.forEach( el => { %>
@@ -62,29 +72,35 @@
                                             <div class="alert alert-info"><%= el.msg %></div>
                                         <% }) %>    
                                     <% } %>
-                                    <form action="/signup" method="POST">
-                                        <div class="mb-3">
-                                            <label for="userName" class="form-label">Brukernavn</label>
-                                            <input type="text" class="form-control" id="userName" name="userName">
-                                          </div>
-                                        <div class="mb-3">
-                                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                                          <div id="emailHelp" class="form-text">Vi deler aldri dine personlige opplysninger med andre.</div>
-                                        </div>
-                                        <div class="mb-3">
-                                          <label for="password" class="form-label">Passord</label>
-                                          <input type="password" class="form-control" id="password" name="password">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="confirmPassword" class="form-label">Gjenta passord</label>
-                                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                                          </div>
-                                        <button type="submit" class="btn btn-primary">Enter</button>
-                                      </form>
-                                      <div>								
-                                        <a class="button" href="/login">Logg inn</a>     
-                                    </div>
+                                    <form action="/lagkonto" method="POST">
+											<div class="mb-3">
+												<label for="userName" class="form-label">Brukernavn</label>
+												<input type="text" class="form-control" id="userName" name="userName">
+											</div>                                   
+								
+											<div class="mb-3">
+												<label for="exampleInputEmail1" class="form-label">Email</label>
+												<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+												<div id="emailHelp" class="form-text"></div>
+											</div>
+											<div class="mb-3">
+												<label for="caption" class="form-label">Bio</label>
+												<textarea class="form-control" id="bio" name="bio"></textarea>
+											</div>
+											<div class="mb-3">
+											<label for="password" class="form-label">Passord</label>
+											<input type="password" class="form-control" id="password" name="password">
+											</div>
+											<div class="mb-3">
+												<label for="confirmPassword" class="form-label">Gjenta passord</label>
+												<input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+											</div>
+											
+											<button type="submit" class="btn btn-primary">Enter</button>
+											</form>
+											<div>								
+											<a class="button" href="/logginn">Logg inn</a>     
+                                    	</div>
                               	</div>
 								
                       </section>
@@ -104,14 +120,7 @@
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.scrollex.min.js"></script>
-			<script src="/assets/js/jquery.scrolly.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
+
 
 	</body>
 </html>

@@ -41,7 +41,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Turen er registrert!");
-      res.redirect("/feed");
+      res.redirect("/turtavle");
     } catch (err) {
       console.log(err);
     }
@@ -69,9 +69,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/profile");
+      res.redirect("/postentur");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/postentur");
     }
   },
 };
