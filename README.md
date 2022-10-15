@@ -1,3 +1,9 @@
+# TRANSLOCATE
+
+A carpooling app where users can connect to share rides with each other. 
+Users can post rides and share the cost of travelling. 
+
+
 # Install
 
 `npm install`
