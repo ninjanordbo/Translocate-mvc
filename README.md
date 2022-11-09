@@ -20,7 +20,7 @@ If I had more time I would look into adding Socket.IO or WebSocket so that users
 
 ## Lessons Learned:
 
-This was one of the fisrt times working with the MVC pattern to structure the various sections. I also gained experience working with modules in express to keep things nice and tidy. Mongoose made it easier to validate documents going into the app database which was another layer ontop of Mongo.  
+This was one of the first times working with the MVC pattern to structure the various sections. I also gained experience working with modules in express to keep things nice and tidy. Mongoose made it easier to validate documents going into the app database which was another layer ontop of Mongo.  
 
 # Make it your own 
 
